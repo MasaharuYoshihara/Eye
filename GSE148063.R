@@ -170,64 +170,11 @@ FeatureScatter(pbmc_whole_ov, "Notch3", "Dll1")
 pbmc_whole_ov_Notch3_Dll1 <- subset(x = pbmc_whole_ov, subset = Notch3 > 0 & Dll1 > 0)
 # pbmc_whole_ov_Notch3_Dll1 252 samples (5.59 %) (rest 94.40 %)
 
-# sessionInfo()
-# R version 4.3.1 (2023-06-16)
-# Platform: aarch64-apple-darwin20 (64-bit)
-# Running under: macOS Sonoma 14.0
-# 
-# Matrix products: default
-# BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
-# LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
-# 
-# locale:
-#   [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
-# 
-# time zone: Asia/Tokyo
-# tzcode source: internal
-# 
-# attached base packages:
-#   [1] stats     graphics  grDevices utils     datasets  methods   base     
-# 
-# other attached packages:
-#   [1] patchwork_1.1.3         Seurat_4.9.9.9060       SeuratObject_4.9.9.9091
-# [4] sp_2.1-0                dplyr_1.1.3            
-# 
-# loaded via a namespace (and not attached):
-#   [1] deldir_1.0-9           pbapply_1.7-2          gridExtra_2.3         
-# [4] rlang_1.1.1            magrittr_2.0.3         RcppAnnoy_0.0.21      
-# [7] matrixStats_1.0.0      ggridges_0.5.4         compiler_4.3.1        
-# [10] spatstat.geom_3.2-5    png_0.1-8              vctrs_0.6.3           
-# [13] reshape2_1.4.4         stringr_1.5.0          pkgconfig_2.0.3       
-# [16] fastmap_1.1.1          ellipsis_0.3.2         utf8_1.2.3            
-# [19] promises_1.2.1         purrr_1.0.2            jsonlite_1.8.7        
-# [22] goftest_1.2-3          later_1.3.1            spatstat.utils_3.0-3  
-# [25] irlba_2.3.5.1          parallel_4.3.1         cluster_2.1.4         
-# [28] R6_2.5.1               ica_1.0-3              stringi_1.7.12        
-# [31] RColorBrewer_1.1-3     spatstat.data_3.0-1    reticulate_1.32.0     
-# [34] parallelly_1.36.0      lmtest_0.9-40          scattermore_1.2       
-# [37] Rcpp_1.0.11            tensor_1.5             future.apply_1.11.0   
-# [40] zoo_1.8-12             sctransform_0.4.0      httpuv_1.6.11         
-# [43] Matrix_1.6-1.1         splines_4.3.1          igraph_1.5.1          
-# [46] tidyselect_1.2.0       rstudioapi_0.15.0      abind_1.4-5           
-# [49] spatstat.random_3.1-6  codetools_0.2-19       miniUI_0.1.1.1        
-# [52] spatstat.explore_3.2-3 listenv_0.9.0          lattice_0.21-9        
-# [55] tibble_3.2.1           plyr_1.8.9             shiny_1.7.5           
-# [58] ROCR_1.0-11            Rtsne_0.16             future_1.33.0         
-# [61] fastDummies_1.7.3      survival_3.5-7         polyclip_1.10-6       
-# [64] fitdistrplus_1.1-11    pillar_1.9.0           KernSmooth_2.23-22    
-# [67] plotly_4.10.2          generics_0.1.3         RcppHNSW_0.5.0        
-# [70] ggplot2_3.4.3          munsell_0.5.0          scales_1.2.1          
-# [73] globals_0.16.2         xtable_1.8-4           glue_1.6.2            
-# [76] lazyeval_0.2.2         tools_4.3.1            data.table_1.14.8     
-# [79] RSpectra_0.16-1        RANN_2.6.1             leiden_0.4.3          
-# [82] dotCall64_1.0-2        cowplot_1.1.1          grid_4.3.1            
-# [85] tidyr_1.3.0            colorspace_2.1-0       nlme_3.1-163          
-# [88] cli_3.6.1              spatstat.sparse_3.0-2  spam_2.9-1            
-# [91] fansi_1.0.4            viridisLite_0.4.2      uwot_0.1.16           
-# [94] gtable_0.3.4           digest_0.6.33          progressr_0.14.0      
-# [97] ggrepel_0.9.3          htmlwidgets_1.6.2      htmltools_0.5.6.1     
-# [100] lifecycle_1.0.3        httr_1.4.7             mime_0.12             
-# [103] MASS_7.3-60 
+pbmc_whole_ov_Jag1_Hes1 <- subset(x = pbmc_whole_ov, subset = Jag1 > 0 & Hes1 > 0)
+# pbmc_whole_ov_Jag1_Hes1 858 samples 
+
+pbmc_whole_ov_Dll1_Hes1 <- subset(x = pbmc_whole_ov, subset = Dll1 > 0 & Hes1 > 0)
+# pbmc_whole_ov_Dll1_Hes1 507 samples 
 
 #################################
 
@@ -431,14 +378,6 @@ FeatureScatter(somite_26_ov, "Notch1", "Hes1")
 
 #################################
 
-
-#################################
-
-
-#################################
-
-#################################
-
 new.cluster.ids_2 <- c("ov", "ov", "ov","mes", "mes", "mes", "ov", "mes", "endoderm", "ov", "endothelium", "ov", "ov", "erythrocyte", "no ident", "no ident", "no ident") 
 names(new.cluster.ids_2) <- levels(pbmc)
 pbmc_integrate <- RenameIdents(pbmc, new.cluster.ids_2)
@@ -465,4 +404,63 @@ png("dot_ov_target.png")
 DotPlot(object = pbmc_ov, features = c("Hes1", "Hes5", "Hey1", "Hey2"), group.by = "stage")
 dev.off()
 
-saveRDS(pbmc, file = "../pbmc.rds")
+#################################
+
+# sessionInfo()
+# R version 4.3.1 (2023-06-16)
+# Platform: aarch64-apple-darwin20 (64-bit)
+# Running under: macOS Sonoma 14.0
+# 
+# Matrix products: default
+# BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+# LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+# 
+# locale:
+#   [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+# 
+# time zone: Asia/Tokyo
+# tzcode source: internal
+# 
+# attached base packages:
+#   [1] stats     graphics  grDevices utils     datasets  methods   base     
+# 
+# other attached packages:
+#   [1] patchwork_1.1.3         Seurat_4.9.9.9060       SeuratObject_4.9.9.9091
+# [4] sp_2.1-1                dplyr_1.1.3            
+# 
+# loaded via a namespace (and not attached):
+#   [1] deldir_1.0-9           pbapply_1.7-2          gridExtra_2.3         
+# [4] rlang_1.1.1            magrittr_2.0.3         RcppAnnoy_0.0.21      
+# [7] matrixStats_1.0.0      ggridges_0.5.4         compiler_4.3.1        
+# [10] spatstat.geom_3.2-7    png_0.1-8              vctrs_0.6.4           
+# [13] reshape2_1.4.4         stringr_1.5.0          pkgconfig_2.0.3       
+# [16] fastmap_1.1.1          ellipsis_0.3.2         utf8_1.2.3            
+# [19] promises_1.2.1         purrr_1.0.2            jsonlite_1.8.7        
+# [22] goftest_1.2-3          later_1.3.1            spatstat.utils_3.0-3  
+# [25] irlba_2.3.5.1          parallel_4.3.1         cluster_2.1.4         
+# [28] R6_2.5.1               ica_1.0-3              stringi_1.7.12        
+# [31] RColorBrewer_1.1-3     spatstat.data_3.0-1    reticulate_1.34.0     
+# [34] parallelly_1.36.0      lmtest_0.9-40          scattermore_1.2       
+# [37] Rcpp_1.0.11            tensor_1.5             future.apply_1.11.0   
+# [40] zoo_1.8-12             sctransform_0.4.1      httpuv_1.6.11         
+# [43] Matrix_1.6-1.1         splines_4.3.1          igraph_1.5.1          
+# [46] tidyselect_1.2.0       rstudioapi_0.15.0      abind_1.4-5           
+# [49] spatstat.random_3.1-6  codetools_0.2-19       miniUI_0.1.1.1        
+# [52] spatstat.explore_3.2-3 listenv_0.9.0          lattice_0.21-9        
+# [55] tibble_3.2.1           plyr_1.8.9             shiny_1.7.5.1         
+# [58] ROCR_1.0-11            Rtsne_0.16             future_1.33.0         
+# [61] fastDummies_1.7.3      survival_3.5-7         polyclip_1.10-6       
+# [64] fitdistrplus_1.1-11    pillar_1.9.0           KernSmooth_2.23-22    
+# [67] plotly_4.10.3          generics_0.1.3         RcppHNSW_0.5.0        
+# [70] ggplot2_3.4.4          munsell_0.5.0          scales_1.2.1          
+# [73] globals_0.16.2         xtable_1.8-4           glue_1.6.2            
+# [76] lazyeval_0.2.2         tools_4.3.1            data.table_1.14.8     
+# [79] RSpectra_0.16-1        RANN_2.6.1             leiden_0.4.3          
+# [82] dotCall64_1.1-0        cowplot_1.1.1          grid_4.3.1            
+# [85] tidyr_1.3.0            colorspace_2.1-0       nlme_3.1-163          
+# [88] cli_3.6.1              spatstat.sparse_3.0-2  spam_2.9-1            
+# [91] fansi_1.0.5            viridisLite_0.4.2      uwot_0.1.16           
+# [94] gtable_0.3.4           digest_0.6.33          progressr_0.14.0      
+# [97] ggrepel_0.9.4          htmlwidgets_1.6.2      htmltools_0.5.6.1     
+# [100] lifecycle_1.0.3        httr_1.4.7             mime_0.12             
+# [103] MASS_7.3-60      
